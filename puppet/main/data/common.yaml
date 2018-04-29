@@ -1,3 +1,4 @@
 ---
+
 classes:
- - role::node
+  - profile::common
