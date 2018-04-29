@@ -1,0 +1,15 @@
+version: "2"
+
+services:
+  build-rpm:
+    image: ${AWS_ACCOUNT_ID}.dkr.ecr.eu-west-1.amazonaws.com/builders/puppet:${IMAGE_VERSION_TAG}
+    entrypoint: /etc/init.d/build-rpm.sh
+    volumes:
+      - "./:${BUILD_DIR}"
+    environment:
+      - BUILD_DIR=${BUILD_DIR}
+  develop:
+    image: ${AWS_ACCOUNT_ID}.dkr.ecr.eu-west-1.amazonaws.com/builders/puppet:${IMAGE_VERSION_TAG}
+    entrypoint: /etc/init.d/develop.sh
+    volumes:
+      - "./:${BUILD_DIR}"

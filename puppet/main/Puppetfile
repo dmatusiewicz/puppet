@@ -1,0 +1,4 @@
+forge "https://forgeapi.puppetlabs.com"
+
+mod 'rtyler-jenkins', '1.7.0'
+mod 'puppetlabs-vcsrepo', '2.3.0'
