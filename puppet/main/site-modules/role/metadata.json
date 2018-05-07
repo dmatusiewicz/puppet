@@ -1,0 +1,18 @@
+{
+  "name": "main-roles",
+  "version": "0.1.0",
+  "author": "Dawid Matusiewicz",
+  "summary": "Module for specifying roles in a project",
+  "license": "Apache-2.0",
+  "source": "https://github.com/dmatusiewicz/puppet",
+  "project_page": "https://github.com/dmatusiewicz/puppet",
+  "issues_url": "https://github.com/dmatusiewicz/puppet/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 1.0.0"
+    }
+  ],
+  "data_provider": null
+}
+

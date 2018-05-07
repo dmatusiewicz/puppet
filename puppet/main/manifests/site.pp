@@ -1,1 +1,3 @@
-include(lookup('classes'), Array[String], 'unique')
+node default {
+  lookup('classes', {merge => unique}).include
+}

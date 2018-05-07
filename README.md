@@ -52,4 +52,3 @@ docker rmi $(docker images -q)
 ```
 
 # Downloading docker image  
-- you should have 
