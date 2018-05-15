@@ -1,0 +1,9 @@
+---
+classes:
+  - role::repository
+
+
+nexus::version: '3.11.0'
+nexus::revision: '01'
+nexus::nexus_type: 'unix'
+nexus::download_site: 'https://s3-eu-west-1.amazonaws.com/nexus-download'

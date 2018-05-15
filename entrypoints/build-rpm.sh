@@ -39,3 +39,4 @@ RPM="${RPM_NAME}-${RPM_VERSION}-${RPM_ITERATION}.${RPM_ARCH}.rpm"
 mv ${RPM} ../builds
 echo -e "Moved ${SET_GREEN}${RPM}${RESET} to ${BUILD_DIR}/builds directory"
 echo -e "Status: ${SET_GREEN}Build complete.${RESET}"
+

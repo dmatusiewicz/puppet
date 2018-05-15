@@ -8,8 +8,9 @@ defaults:
   # datadir: data
   # data_hash: yaml_data
 hierarchy:
-  - name: "Per-node data (yaml version)"
-    path: "nodes/%{::trusted.certname}.yaml"
+  - name: "Per role configuration"
+    paths: 
+      - "roles/${role}.yaml"
   - name: "Other YAML hierarchy levels"
     paths:
       - "common.yaml"

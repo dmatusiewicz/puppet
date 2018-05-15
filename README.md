@@ -31,11 +31,24 @@ docker push <AWS_ACOUNT_ID>.dkr.ecr.eu-west-1.amazonaws.com/builders/puppet:late
 
 ## Adding a module
 - Add new entry in Puppetfile
-- Check if installation works
-```librarian-puppet install```
-- Package new module to vendor directory
-```librarian-puppet package```
-- Push changes to repository (expected changes are Puppetfile and new archive in *vendor/puppet/cache/*)
+- Run 
+```
+docker-compose run package-modules -f docker-compose.yaml
+```
+- After that you should see changes in the repo: 
+```
+Changes not staged for commit:
+
+	modified:   puppet/main/Puppetfile
+	modified:   puppet/main/Puppetfile.lock
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	puppet/main/vendor/puppet/cache/hubspot-nexus-1.7.3.tar.gz
+	puppet/main/vendor/puppet/cache/maestrodev-wget-1.7.3.tar.gz
+```
+- Push changes to repository (expected changes are Puppetfile and new archive in *puppet/main/vendor/puppet/cache/*)
 
 # Build RPM
 ```docker-compose run build-rpm -f docker-compose.yaml```
