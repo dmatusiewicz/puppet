@@ -9,7 +9,12 @@ services:
     environment:
       - BUILD_DIR=${BUILD_DIR}
   develop:
-    image: ${AWS_ACCOUNT_ID}.dkr.ecr.eu-west-1.amazonaws.com/builders/puppet:${IMAGE_VERSION_TAG}
+    image: builders/puppet:${IMAGE_VERSION_TAG}
     entrypoint: /etc/init.d/develop.sh
+    volumes:
+      - "./puppet:/etc/puppetlabs/code/environments"
+  nexus-server:
+    image: builders/puppet:${IMAGE_VERSION_TAG}
+    entrypoint: /etc/init.d/run-nexus-server.sh
     volumes:
       - "./puppet:/etc/puppetlabs/code/environments"
