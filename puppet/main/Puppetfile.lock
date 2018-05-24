@@ -1,32 +1,13 @@
 FORGE
   remote: https://forgeapi.puppetlabs.com
   specs:
-    darin-zypprepo (1.0.2)
-    hubspot-nexus (1.7.3)
-      maestrodev-wget (< 2.0.0, >= 1.0.0)
-      puppetlabs-stdlib (< 5.0.0, >= 0.0.0)
-    maestrodev-wget (1.7.3)
-    puppet-archive (3.0.0)
-      puppetlabs-stdlib (< 5.0.0, >= 4.13.1)
-    puppet-yum (2.2.1)
-      puppetlabs-concat (< 5.0.0, >= 1.2.5)
-      puppetlabs-stdlib (< 5.0.0, >= 4.10.0)
-    puppetlabs-apt (2.4.0)
-      puppetlabs-stdlib (< 5.0.0, >= 4.13.0)
-    puppetlabs-concat (4.2.1)
-      puppetlabs-stdlib (< 5.0.0, >= 4.13.1)
-    puppetlabs-java (1.6.0)
+    puppetlabs-apache (1.10.0)
+      puppetlabs-concat (< 3.0.0, >= 1.1.1)
       puppetlabs-stdlib (< 5.0.0, >= 2.4.0)
+    puppetlabs-concat (2.2.1)
+      puppetlabs-stdlib (< 5.0.0, >= 4.2.0)
     puppetlabs-stdlib (4.25.1)
-    rtyler-jenkins (1.7.0)
-      darin-zypprepo (< 2.0.0, >= 1.0.1)
-      puppet-archive (>= 0.4.8)
-      puppetlabs-apt (< 3.0.0, >= 0.0.3)
-      puppetlabs-java (< 2.0.0, >= 1.0.1)
-      puppetlabs-stdlib (< 5.0.0, >= 4.6.0)
 
 DEPENDENCIES
-  hubspot-nexus (= 1.7.3)
-  puppet-yum (= 2.2.1)
-  rtyler-jenkins (= 1.7.0)
+  puppetlabs-apache (= 1.10.0)
 

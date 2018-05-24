@@ -10,7 +10,7 @@ defaults:
 hierarchy:
   - name: "Per role configuration"
     paths: 
-      - "roles/${role}.yaml"
+      - "roles/%{role}.yaml"
   - name: "Other YAML hierarchy levels"
     paths:
       - "common.yaml"

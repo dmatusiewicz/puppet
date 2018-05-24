@@ -35,3 +35,10 @@ fi
 SET_GREEN='\e[32m'
 SET_RED='\e[31m'
 RESET='\e[0m'
+
+if [[ ${BUILD_DIR+x} ]]; then
+  cd ${BUILD_DIR}
+  ACCOUNT_ID=`aws sts get-caller-identity --output json --region eu-west-1| jq .Account -r`
+  BRANCH=$(git rev-parse --abbrev-ref HEAD)
+  COMMIT_ID=$(git rev-parse HEAD)
+fi 

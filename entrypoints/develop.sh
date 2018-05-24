@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 
 # Load common settings 
 . /etc/init.d/common.sh

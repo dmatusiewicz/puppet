@@ -9,16 +9,8 @@ echo -e "Changed directory to: ${SET_GREEN}`pwd`${RESET}"
 echo -e "Installing modules in: ${SET_GREEN}`pwd`/modules${RESET}"
 librarian-puppet install --local
 
-cd ${BUILD_DIR}
-echo -e "Changed directory to: ${SET_GREEN}`pwd`${RESET}"
-
-echo -n "Detecting branch: "
-BRANCH=$(git rev-parse --abbrev-ref HEAD)
-echo -e "${SET_GREEN}${BRANCH}${RESET}"
-
-echo -n "Detecting latest commit hash: "
-COMMIT_ID=$(git rev-parse HEAD)
-echo -e "${SET_GREEN}${COMMIT_ID}${RESET}"
+echo -e "Branch: ${SET_GREEN}${BRANCH}${RESET}"
+echo -e "Commit hash: ${SET_GREEN}${COMMIT_ID}${RESET}"
 
 cd ${BUILD_DIR}/puppet
 echo -e "Changed directory to: ${SET_GREEN}`pwd`${RESET}"

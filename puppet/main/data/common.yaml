@@ -1,4 +1,61 @@
 ---
 classes:
   - role::demo
+  - apache
+  # - yum 
 
+yum::managed_repos:
+    - 'amzn-main2'
+
+yum::repo_exclusions:
+  - 'amzn-main'
+  - 'amzn-main-debuginfo'
+
+apache::service_ensure: 'stopped'
+
+apache::vhost:
+  mot-web-frontend:
+    access_logs:
+      -  
+        file: test01.log
+        format: PRETTY JSON FORMAT
+      -  
+        file: test02.log
+        format: UGLY TEXT FORMAT
+    directories:
+      - path: /opt/dvsa/mot-web-frontend/public
+        options: [ FollowSymLinks ]
+        allow_override: [ None ]
+        require: all granted
+        directoryindex: index.php
+        expires_active: 'On'
+        expires_default: '"access plus 5 minutes"'
+    docroot: /opt
+    ip: '*'
+    port: 80
+    rewrites:
+      - rewrite_cond:
+        - '%{hiera("percentsign")}{DOCUMENT_ROOT}%{hiera("percentsign")}{REQUEST_URI} !-s'
+        - '%{hiera("percentsign")}{DOCUMENT_ROOT}%{hiera("percentsign")}{REQUEST_URI} !-l'
+        - '%{hiera("percentsign")}{DOCUMENT_ROOT}%{hiera("percentsign")}{REQUEST_URI} !-d'
+        rewrite_rule: [ '^(.*)$ %{literal("%")}{DOCUMENT_ROOT}/index.php [NC,L]' ]
+      - rewrite_rule: [ '.* - [E=HTTP_Authorization:%{literal("%")}{HTTP:Authorization}]' ]
+    setenv:
+      - APPLICATION_ENV testing
+      - APPLICATION_CONFIG_PATH /etc/dvsa/mot-web-frontend
+
+
+yum::repos:
+  amzn-main2:
+    descr: "amzn-main-Base"
+    mirrorlist: "http://repo.$awsregion.$awsdomain/$releasever/main/mirror.list"
+    mirrorlist_expire: 300
+    metadata_expire: 300
+    priority: 10
+    failovermethod: "priority"
+    gpgcheck: true
+    gpgkey: "file:///etc/pki/rpm-gpg/RPM-GPG-KEY-amazon-ga"
+    enabled: true
+    retries: 3
+    timeout: 5
+    target: "/etc/yum.repos.d/amzn-main.repo" 

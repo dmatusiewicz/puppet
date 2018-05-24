@@ -1,5 +1,6 @@
 forge "https://forgeapi.puppetlabs.com"
 
-mod 'rtyler-jenkins', '1.7.0'
-mod 'hubspot-nexus', '1.7.3'
-mod 'puppet-yum', '2.2.1'
+#mod 'rtyler-jenkins', '1.7.0'
+#mod 'hubspot-nexus', '1.7.3'
+#mod 'puppet-yum', '3.2.1'
+mod 'puppetlabs-apache', '1.10.0'
