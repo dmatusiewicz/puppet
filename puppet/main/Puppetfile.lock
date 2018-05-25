@@ -1,13 +1,18 @@
 FORGE
   remote: https://forgeapi.puppetlabs.com
   specs:
-    puppetlabs-apache (1.10.0)
-      puppetlabs-concat (< 3.0.0, >= 1.1.1)
-      puppetlabs-stdlib (< 5.0.0, >= 2.4.0)
-    puppetlabs-concat (2.2.1)
-      puppetlabs-stdlib (< 5.0.0, >= 4.2.0)
+    hubspot-nexus (1.7.3)
+      maestrodev-wget (< 2.0.0, >= 1.0.0)
+      puppetlabs-stdlib (< 5.0.0, >= 0.0.0)
+    maestrodev-wget (1.7.3)
+    puppet-archive (2.3.0)
+      puppetlabs-stdlib (< 5.0.0, >= 4.13.1)
+    puppetlabs-java (2.4.0)
+      puppet-archive (< 3.0.0, >= 1.1.0)
+      puppetlabs-stdlib (< 5.0.0, >= 4.13.1)
     puppetlabs-stdlib (4.25.1)
 
 DEPENDENCIES
-  puppetlabs-apache (= 1.10.0)
+  hubspot-nexus (= 1.7.3)
+  puppetlabs-java (= 2.4.0)
 
